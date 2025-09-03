@@ -1,0 +1,1946 @@
+{
+	"info": {
+		"_postman_id": "5c9c47e7-8a7e-4df8-b864-970506a5eff4",
+		"name": "THY Case API",
+		"description": "You can filter endpoints from the search field on the right and send a live request with 'Try it out'.\n\nContact Support:\n Name: Osman Bahtiyar\n Email: osman.bahtiyar@outlook.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13436229"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "transportations",
+					"item": [
+						{
+							"name": "List transportations (paged)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/transportations?pageNum=7808&pageSize=7808",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"transportations"
+									],
+									"query": [
+										{
+											"key": "pageNum",
+											"value": "7808",
+											"description": "(Required) "
+										},
+										{
+											"key": "pageSize",
+											"value": "7808",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "Returns a slice of transportations."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/transportations?pageNum=7808&pageSize=7808",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"transportations"
+											],
+											"query": [
+												{
+													"key": "pageNum",
+													"value": "7808"
+												},
+												{
+													"key": "pageSize",
+													"value": "7808"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"transportations\": [\n    {\n      \"id\": 101,\n      \"originLocation\": {\n        \"id\": 1,\n        \"name\": \"Sabiha Gokcen Airport\",\n        \"country\": \"Turkey\",\n        \"city\": \"Istanbul\",\n        \"locationCode\": \"SAW\"\n      },\n      \"destinationLocation\": {\n        \"id\": 1,\n        \"name\": \"Sabiha Gokcen Airport\",\n        \"country\": \"Turkey\",\n        \"city\": \"Istanbul\",\n        \"locationCode\": \"SAW\"\n      },\n      \"transportationType\": \"FLIGHT\",\n      \"operatingDays\": [\n        1,\n        2,\n        3,\n        4,\n        5\n      ]\n    },\n    {\n      \"id\": 101,\n      \"originLocation\": {\n        \"id\": 1,\n        \"name\": \"Sabiha Gokcen Airport\",\n        \"country\": \"Turkey\",\n        \"city\": \"Istanbul\",\n        \"locationCode\": \"SAW\"\n      },\n      \"destinationLocation\": {\n        \"id\": 1,\n        \"name\": \"Sabiha Gokcen Airport\",\n        \"country\": \"Turkey\",\n        \"city\": \"Istanbul\",\n        \"locationCode\": \"SAW\"\n      },\n      \"transportationType\": \"FLIGHT\",\n      \"operatingDays\": [\n        1,\n        2,\n        3,\n        4,\n        5\n      ]\n    }\n  ],\n  \"pageNum\": 0,\n  \"pageSize\": 20,\n  \"hasNext\": true\n}"
+								},
+								{
+									"name": "Validation error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/transportations?pageNum=7808&pageSize=7808",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"transportations"
+											],
+											"query": [
+												{
+													"key": "pageNum",
+													"value": "7808"
+												},
+												{
+													"key": "pageSize",
+													"value": "7808"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Server error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/transportations?pageNum=7808&pageSize=7808",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"transportations"
+											],
+											"query": [
+												{
+													"key": "pageNum",
+													"value": "7808"
+												},
+												{
+													"key": "pageSize",
+													"value": "7808"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Create transportation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"destinationLocationId\": 2,\n  \"originLocationId\": 1,\n  \"transportationType\": \"FLIGHT\",\n  \"operatingDays\": [\n    1,\n    2,\n    3,\n    4,\n    5\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/transportations",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"transportations"
+									]
+								},
+								"description": "Creates a transportation between two locations."
+							},
+							"response": [
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"destinationLocationId\": 2,\n  \"originLocationId\": 1,\n  \"transportationType\": \"FLIGHT\",\n  \"operatingDays\": [\n    1,\n    2,\n    3,\n    4,\n    5\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/transportations",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"transportations"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 101,\n  \"originLocation\": {\n    \"id\": 1,\n    \"name\": \"Sabiha Gokcen Airport\",\n    \"country\": \"Turkey\",\n    \"city\": \"Istanbul\",\n    \"locationCode\": \"SAW\"\n  },\n  \"destinationLocation\": {\n    \"id\": 1,\n    \"name\": \"Sabiha Gokcen Airport\",\n    \"country\": \"Turkey\",\n    \"city\": \"Istanbul\",\n    \"locationCode\": \"SAW\"\n  },\n  \"transportationType\": \"FLIGHT\",\n  \"operatingDays\": [\n    1,\n    2,\n    3,\n    4,\n    5\n  ]\n}"
+								},
+								{
+									"name": "Validation error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"destinationLocationId\": 2,\n  \"originLocationId\": 1,\n  \"transportationType\": \"FLIGHT\",\n  \"operatingDays\": [\n    1,\n    2,\n    3,\n    4,\n    5\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/transportations",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"transportations"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Conflict",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"destinationLocationId\": 2,\n  \"originLocationId\": 1,\n  \"transportationType\": \"FLIGHT\",\n  \"operatingDays\": [\n    1,\n    2,\n    3,\n    4,\n    5\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/transportations",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"transportations"
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Server error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"destinationLocationId\": 2,\n  \"originLocationId\": 1,\n  \"transportationType\": \"FLIGHT\",\n  \"operatingDays\": [\n    1,\n    2,\n    3,\n    4,\n    5\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/transportations",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"transportations"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Get Transportation Types",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/transportations/types",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"transportations",
+										"types"
+									]
+								},
+								"description": "Get available transportation types"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/transportations/types",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"transportations",
+												"types"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  \"string\"\n]"
+								}
+							]
+						},
+						{
+							"name": "Get transportation by id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/transportations/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"transportations",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "488",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "Returns a transportation by its id."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/transportations/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"transportations",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "488",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 101,\n  \"originLocation\": {\n    \"id\": 1,\n    \"name\": \"Sabiha Gokcen Airport\",\n    \"country\": \"Turkey\",\n    \"city\": \"Istanbul\",\n    \"locationCode\": \"SAW\"\n  },\n  \"destinationLocation\": {\n    \"id\": 1,\n    \"name\": \"Sabiha Gokcen Airport\",\n    \"country\": \"Turkey\",\n    \"city\": \"Istanbul\",\n    \"locationCode\": \"SAW\"\n  },\n  \"transportationType\": \"FLIGHT\",\n  \"operatingDays\": [\n    1,\n    2,\n    3,\n    4,\n    5\n  ]\n}"
+								},
+								{
+									"name": "Not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/transportations/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"transportations",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "488",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Server error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/transportations/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"transportations",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "488",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Update transportation",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"destinationLocationId\": 2,\n  \"originLocationId\": 1,\n  \"transportationType\": \"FLIGHT\",\n  \"operatingDays\": [\n    1,\n    2,\n    3,\n    4,\n    5\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/transportations/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"transportations",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "488",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "Replaces an existing transportation with the provided payload."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"destinationLocationId\": 2,\n  \"originLocationId\": 1,\n  \"transportationType\": \"FLIGHT\",\n  \"operatingDays\": [\n    1,\n    2,\n    3,\n    4,\n    5\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/transportations/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"transportations",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "488",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 101,\n  \"originLocation\": {\n    \"id\": 1,\n    \"name\": \"Sabiha Gokcen Airport\",\n    \"country\": \"Turkey\",\n    \"city\": \"Istanbul\",\n    \"locationCode\": \"SAW\"\n  },\n  \"destinationLocation\": {\n    \"id\": 1,\n    \"name\": \"Sabiha Gokcen Airport\",\n    \"country\": \"Turkey\",\n    \"city\": \"Istanbul\",\n    \"locationCode\": \"SAW\"\n  },\n  \"transportationType\": \"FLIGHT\",\n  \"operatingDays\": [\n    1,\n    2,\n    3,\n    4,\n    5\n  ]\n}"
+								},
+								{
+									"name": "Validation error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"destinationLocationId\": 2,\n  \"originLocationId\": 1,\n  \"transportationType\": \"FLIGHT\",\n  \"operatingDays\": [\n    1,\n    2,\n    3,\n    4,\n    5\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/transportations/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"transportations",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "488",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"destinationLocationId\": 2,\n  \"originLocationId\": 1,\n  \"transportationType\": \"FLIGHT\",\n  \"operatingDays\": [\n    1,\n    2,\n    3,\n    4,\n    5\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/transportations/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"transportations",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "488",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Conflict",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"destinationLocationId\": 2,\n  \"originLocationId\": 1,\n  \"transportationType\": \"FLIGHT\",\n  \"operatingDays\": [\n    1,\n    2,\n    3,\n    4,\n    5\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/transportations/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"transportations",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "488",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Server error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"destinationLocationId\": 2,\n  \"originLocationId\": 1,\n  \"transportationType\": \"FLIGHT\",\n  \"operatingDays\": [\n    1,\n    2,\n    3,\n    4,\n    5\n  ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/transportations/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"transportations",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "488",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Delete transportation",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/transportations/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"transportations",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "488",
+											"description": "(Required) "
+										}
+									]
+								},
+								"description": "Deletes a transportation by id."
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/transportations/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"transportations",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "488",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/transportations/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"transportations",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "488",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Server error",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/transportations/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"transportations",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "488",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "locations",
+					"item": [
+						{
+							"name": "List locations (paged)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/locations?pageNum=0&pageSize=20&sortBy=id&direction=asc",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"locations"
+									],
+									"query": [
+										{
+											"key": "pageNum",
+											"value": "0",
+											"description": "(Required) Zero-based page index"
+										},
+										{
+											"key": "pageSize",
+											"value": "20",
+											"description": "(Required) Page size (max 100)"
+										},
+										{
+											"key": "sortBy",
+											"value": "id",
+											"description": "Field to sort by (id, code, name, city, country)"
+										},
+										{
+											"key": "direction",
+											"value": "asc",
+											"description": "Sort direction (asc, desc)"
+										}
+									]
+								},
+								"description": "Returns a slice (page) of locations."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/locations?pageNum=0&pageSize=20&sortBy=id&direction=asc",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"locations"
+											],
+											"query": [
+												{
+													"key": "pageNum",
+													"value": "0"
+												},
+												{
+													"key": "pageSize",
+													"value": "20"
+												},
+												{
+													"key": "sortBy",
+													"value": "id"
+												},
+												{
+													"key": "direction",
+													"value": "asc"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"locations\": [\n    {\n      \"id\": 1,\n      \"name\": \"Sabiha Gokcen Airport\",\n      \"country\": \"Turkey\",\n      \"city\": \"Istanbul\",\n      \"locationCode\": \"SAW\"\n    },\n    {\n      \"id\": 1,\n      \"name\": \"Sabiha Gokcen Airport\",\n      \"country\": \"Turkey\",\n      \"city\": \"Istanbul\",\n      \"locationCode\": \"SAW\"\n    }\n  ],\n  \"pageNum\": 0,\n  \"pageSize\": 20,\n  \"hasNext\": true\n}"
+								},
+								{
+									"name": "Bad request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/locations?pageNum=0&pageSize=20&sortBy=id&direction=asc",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"locations"
+											],
+											"query": [
+												{
+													"key": "pageNum",
+													"value": "0"
+												},
+												{
+													"key": "pageSize",
+													"value": "20"
+												},
+												{
+													"key": "sortBy",
+													"value": "id"
+												},
+												{
+													"key": "direction",
+													"value": "asc"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Server error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/locations?pageNum=0&pageSize=20&sortBy=id&direction=asc",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"locations"
+											],
+											"query": [
+												{
+													"key": "pageNum",
+													"value": "0"
+												},
+												{
+													"key": "pageSize",
+													"value": "20"
+												},
+												{
+													"key": "sortBy",
+													"value": "id"
+												},
+												{
+													"key": "direction",
+													"value": "asc"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Create a location",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"city\": \"Istanbul\",\n  \"country\": \"Turkey\",\n  \"locationCode\": \"SAW\",\n  \"name\": \"Sabiha Gokcen Airport\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/locations",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"locations"
+									]
+								},
+								"description": "Creates a new location and returns the created resource."
+							},
+							"response": [
+								{
+									"name": "Created",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"city\": \"Istanbul\",\n  \"country\": \"Turkey\",\n  \"locationCode\": \"SAW\",\n  \"name\": \"Sabiha Gokcen Airport\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/locations",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"locations"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 1,\n  \"name\": \"Sabiha Gokcen Airport\",\n  \"country\": \"Turkey\",\n  \"city\": \"Istanbul\",\n  \"locationCode\": \"SAW\"\n}"
+								},
+								{
+									"name": "Validation error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"city\": \"Istanbul\",\n  \"country\": \"Turkey\",\n  \"locationCode\": \"SAW\",\n  \"name\": \"Sabiha Gokcen Airport\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/locations",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"locations"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Server error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"city\": \"Istanbul\",\n  \"country\": \"Turkey\",\n  \"locationCode\": \"SAW\",\n  \"name\": \"Sabiha Gokcen Airport\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/locations",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"locations"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Get location by id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/locations/:locationId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"locations",
+										":locationId"
+									],
+									"variable": [
+										{
+											"key": "locationId",
+											"value": "1",
+											"description": "(Required) Location identifier"
+										}
+									]
+								},
+								"description": "Returns a location by its id."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/locations/:locationId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"locations",
+												":locationId"
+											],
+											"variable": [
+												{
+													"key": "locationId",
+													"value": "1",
+													"description": "(Required) Location identifier"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 1,\n  \"name\": \"Sabiha Gokcen Airport\",\n  \"country\": \"Turkey\",\n  \"city\": \"Istanbul\",\n  \"locationCode\": \"SAW\"\n}"
+								},
+								{
+									"name": "Not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/locations/:locationId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"locations",
+												":locationId"
+											],
+											"variable": [
+												{
+													"key": "locationId",
+													"value": "1",
+													"description": "(Required) Location identifier"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Server error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/locations/:locationId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"locations",
+												":locationId"
+											],
+											"variable": [
+												{
+													"key": "locationId",
+													"value": "1",
+													"description": "(Required) Location identifier"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Update location",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"city\": \"Istanbul\",\n  \"country\": \"Turkey\",\n  \"locationCode\": \"SAW\",\n  \"name\": \"Sabiha Gokcen Airport\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/locations/:locationId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"locations",
+										":locationId"
+									],
+									"variable": [
+										{
+											"key": "locationId",
+											"value": "1",
+											"description": "(Required) Location identifier"
+										}
+									]
+								},
+								"description": "Updates an existing location and returns the updated resource."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"city\": \"Istanbul\",\n  \"country\": \"Turkey\",\n  \"locationCode\": \"SAW\",\n  \"name\": \"Sabiha Gokcen Airport\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/locations/:locationId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"locations",
+												":locationId"
+											],
+											"variable": [
+												{
+													"key": "locationId",
+													"value": "1",
+													"description": "(Required) Location identifier"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": 1,\n  \"name\": \"Sabiha Gokcen Airport\",\n  \"country\": \"Turkey\",\n  \"city\": \"Istanbul\",\n  \"locationCode\": \"SAW\"\n}"
+								},
+								{
+									"name": "Validation error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"city\": \"Istanbul\",\n  \"country\": \"Turkey\",\n  \"locationCode\": \"SAW\",\n  \"name\": \"Sabiha Gokcen Airport\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/locations/:locationId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"locations",
+												":locationId"
+											],
+											"variable": [
+												{
+													"key": "locationId",
+													"value": "1",
+													"description": "(Required) Location identifier"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"city\": \"Istanbul\",\n  \"country\": \"Turkey\",\n  \"locationCode\": \"SAW\",\n  \"name\": \"Sabiha Gokcen Airport\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/locations/:locationId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"locations",
+												":locationId"
+											],
+											"variable": [
+												{
+													"key": "locationId",
+													"value": "1",
+													"description": "(Required) Location identifier"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Server error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"city\": \"Istanbul\",\n  \"country\": \"Turkey\",\n  \"locationCode\": \"SAW\",\n  \"name\": \"Sabiha Gokcen Airport\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/locations/:locationId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"locations",
+												":locationId"
+											],
+											"variable": [
+												{
+													"key": "locationId",
+													"value": "1",
+													"description": "(Required) Location identifier"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Delete location",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/locations/:locationId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"locations",
+										":locationId"
+									],
+									"variable": [
+										{
+											"key": "locationId",
+											"value": "1",
+											"description": "(Required) Location identifier"
+										}
+									]
+								},
+								"description": "Deletes a location by its id."
+							},
+							"response": [
+								{
+									"name": "No Content",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/locations/:locationId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"locations",
+												":locationId"
+											],
+											"variable": [
+												{
+													"key": "locationId",
+													"value": "1",
+													"description": "(Required) Location identifier"
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/locations/:locationId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"locations",
+												":locationId"
+											],
+											"variable": [
+												{
+													"key": "locationId",
+													"value": "1",
+													"description": "(Required) Location identifier"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Server error",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/locations/:locationId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"locations",
+												":locationId"
+											],
+											"variable": [
+												{
+													"key": "locationId",
+													"value": "1",
+													"description": "(Required) Location identifier"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Find routes between two locations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/routes/find?originLocationId=1001&destinationLocationId=2001&date=2025-09-05",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"routes",
+								"find"
+							],
+							"query": [
+								{
+									"key": "originLocationId",
+									"value": "1001",
+									"description": "(Required) ID of the origin location"
+								},
+								{
+									"key": "destinationLocationId",
+									"value": "2001",
+									"description": "(Required) ID of the destination location"
+								},
+								{
+									"key": "date",
+									"value": "2025-09-05",
+									"description": "(Required) Date of travel in ISO-8601 format (yyyy-MM-dd). The route legs must operate on this day."
+								}
+							]
+						},
+						"description": "Returns all valid routes from the given origin to the given destination for the specified date. A valid route consists of up to 3 legs with exactly 1 flight, optionally 1 non-flight leg before and/or after the flight. Results are filtered by the operating day derived from the provided date."
+					},
+					"response": [
+						{
+							"name": "Routes found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/routes/find?originLocationId=1001&destinationLocationId=2001&date=2025-09-05",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"routes",
+										"find"
+									],
+									"query": [
+										{
+											"key": "originLocationId",
+											"value": "1001"
+										},
+										{
+											"key": "destinationLocationId",
+											"value": "2001"
+										},
+										{
+											"key": "date",
+											"value": "2025-09-05"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"originLocation\": {\n      \"id\": 1,\n      \"name\": \"Sabiha Gokcen Airport\",\n      \"country\": \"Turkey\",\n      \"city\": \"Istanbul\",\n      \"locationCode\": \"SAW\"\n    },\n    \"destinationLocation\": {\n      \"id\": 1,\n      \"name\": \"Sabiha Gokcen Airport\",\n      \"country\": \"Turkey\",\n      \"city\": \"Istanbul\",\n      \"locationCode\": \"SAW\"\n    },\n    \"transportations\": [\n      {\n        \"id\": 101,\n        \"originLocation\": {\n          \"id\": 1,\n          \"name\": \"Sabiha Gokcen Airport\",\n          \"country\": \"Turkey\",\n          \"city\": \"Istanbul\",\n          \"locationCode\": \"SAW\"\n        },\n        \"destinationLocation\": {\n          \"id\": 1,\n          \"name\": \"Sabiha Gokcen Airport\",\n          \"country\": \"Turkey\",\n          \"city\": \"Istanbul\",\n          \"locationCode\": \"SAW\"\n        },\n        \"transportationType\": \"FLIGHT\",\n        \"operatingDays\": [\n          1,\n          2,\n          3,\n          4,\n          5\n        ]\n      },\n      {\n        \"id\": 101,\n        \"originLocation\": {\n          \"id\": 1,\n          \"name\": \"Sabiha Gokcen Airport\",\n          \"country\": \"Turkey\",\n          \"city\": \"Istanbul\",\n          \"locationCode\": \"SAW\"\n        },\n        \"destinationLocation\": {\n          \"id\": 1,\n          \"name\": \"Sabiha Gokcen Airport\",\n          \"country\": \"Turkey\",\n          \"city\": \"Istanbul\",\n          \"locationCode\": \"SAW\"\n        },\n        \"transportationType\": \"FLIGHT\",\n        \"operatingDays\": [\n          1,\n          2,\n          3,\n          4,\n          5\n        ]\n      }\n    ]\n  },\n  {\n    \"originLocation\": {\n      \"id\": 1,\n      \"name\": \"Sabiha Gokcen Airport\",\n      \"country\": \"Turkey\",\n      \"city\": \"Istanbul\",\n      \"locationCode\": \"SAW\"\n    },\n    \"destinationLocation\": {\n      \"id\": 1,\n      \"name\": \"Sabiha Gokcen Airport\",\n      \"country\": \"Turkey\",\n      \"city\": \"Istanbul\",\n      \"locationCode\": \"SAW\"\n    },\n    \"transportations\": [\n      {\n        \"id\": 101,\n        \"originLocation\": {\n          \"id\": 1,\n          \"name\": \"Sabiha Gokcen Airport\",\n          \"country\": \"Turkey\",\n          \"city\": \"Istanbul\",\n          \"locationCode\": \"SAW\"\n        },\n        \"destinationLocation\": {\n          \"id\": 1,\n          \"name\": \"Sabiha Gokcen Airport\",\n          \"country\": \"Turkey\",\n          \"city\": \"Istanbul\",\n          \"locationCode\": \"SAW\"\n        },\n        \"transportationType\": \"FLIGHT\",\n        \"operatingDays\": [\n          1,\n          2,\n          3,\n          4,\n          5\n        ]\n      },\n      {\n        \"id\": 101,\n        \"originLocation\": {\n          \"id\": 1,\n          \"name\": \"Sabiha Gokcen Airport\",\n          \"country\": \"Turkey\",\n          \"city\": \"Istanbul\",\n          \"locationCode\": \"SAW\"\n        },\n        \"destinationLocation\": {\n          \"id\": 1,\n          \"name\": \"Sabiha Gokcen Airport\",\n          \"country\": \"Turkey\",\n          \"city\": \"Istanbul\",\n          \"locationCode\": \"SAW\"\n        },\n        \"transportationType\": \"FLIGHT\",\n        \"operatingDays\": [\n          1,\n          2,\n          3,\n          4,\n          5\n        ]\n      }\n    ]\n  }\n]"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
