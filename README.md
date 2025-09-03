@@ -1,1 +1,0 @@
-# THY_CASE
