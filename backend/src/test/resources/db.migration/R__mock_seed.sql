@@ -32,7 +32,7 @@ INSERT INTO transportation (origin_location_id, destination_location_id, transpo
 VALUES ((SELECT id FROM "location" WHERE code='ESB'), (SELECT id FROM "location" WHERE code='IST'), 'FLIGHT', ARRAY[1,2,3,4,5,6,7])
     ON CONFLICT (origin_location_id, destination_location_id, transportation_type) DO NOTHING;
 INSERT INTO transportation (origin_location_id, destination_location_id, transportation_type, operating_days)
-VALUES ((SELECT id FROM "location" WHERE code='IST'), (SELECT id FROM "location" WHERE code='ESB'), 'FLIGHT', ARRAY[1,2,3,4,5,6,7])
+VALUES ((SELECT id FROM "location" WHERE code='IST'), (SELECT id FROM "location" WHERE code='ESB'), 'FLIGHT', ARRAY[1,2,3,4,5,7])
     ON CONFLICT (origin_location_id, destination_location_id, transportation_type) DO NOTHING;
 INSERT INTO transportation (origin_location_id, destination_location_id, transportation_type, operating_days)
 VALUES ((SELECT id FROM "location" WHERE code='IST'), (SELECT id FROM "location" WHERE code='LHR'), 'FLIGHT', ARRAY[1,3,5,7])

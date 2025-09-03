@@ -11,6 +11,8 @@ This project follows **Hexagonal Architecture** principles with clear separation
 - **Domain Layer**: Core business logic and entities
 - **Infrastructure Layer**: External concerns (database, web, etc.)
 
+Global error handling is implemented using Spring Boot’s `@RestControllerAdvice`, ensuring centralized exception handling and consistent API error responses.
+
 ### Tech Stack
 
 **Backend:**
