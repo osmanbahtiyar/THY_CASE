@@ -2,6 +2,8 @@
 
 Transportation management system built with Spring Boot backend and React frontend.
 
+For the <strong>Postman</strong> collection, you can use the postman collection file in the files folder and import it to your postman.
+
 ## 🏗️ Architecture
 
 This project follows **Hexagonal Architecture** principles with clear separation of concerns:
@@ -46,5 +48,3 @@ To access the backend, you can use the swagger ui.
 ```bash
 http://localhost:8080/swagger-ui.html
 ```
-
-For the <strong>Postman</strong> collection, you can use the postman collection file in the files folder and import it to your postman.
